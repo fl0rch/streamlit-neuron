@@ -43,12 +43,12 @@ with tab3:
     x0 = st.number_input('Entrada X0', key='x00')
   
   with col2:
-    w1 = st.slider('Peso W0', 0.0, 5.0, key='w10')
-    x1 = st.number_input('Entrada X0', key='x10')
+    w1 = st.slider('Peso W1', 0.0, 5.0, key='w10')
+    x1 = st.number_input('Entrada X1', key='x10')
   
   with col3:
-    w2 = st.slider('Peso W0', 0.0, 5.0, key='w20')
-    x2 = st.number_input('Entrada X0', key='x20')
+    w2 = st.slider('Peso W2', 0.0, 5.0, key='w20')
+    x2 = st.number_input('Entrada X2', key='x20')
   
   b = st.number_input('Sesgo')
 
