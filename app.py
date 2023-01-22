@@ -44,26 +44,26 @@ w_list = []
 image = Image.open('neurona.jpg')
 st.image(image)
 
-st.title('Simulador de neurona')
+st.title(':blue[Simulador de neurona]')
 neuron_size = st.slider('Cantidad entradas/pesos de la neurona', 1, 5, key='neuron_size')
 
-st.header('Pesos')
+st.header('*Pesos*')
 columns_w = st.columns(neuron_size)
 for i in range(0, neuron_size):
   with columns_w[i]:
-    w = st.number_input(f'W{i}', key=f'w{i}')
+    w = st.number_input(f'$W_{i}$', key=f'w{i}')
     w_list.append(np.around(w, 2))
 
-st.header('Entradas')
+st.header('*Entradas*')
 columns_x = st.columns(neuron_size)
 for i in range(0, neuron_size):
   with columns_x[i]:
-    x = st.number_input(f'X{i}', key=f'x{i}')
+    x = st.number_input(f'$X_{i}$', key=f'x{i}')
     x_list.append(np.around(x, 2))
 
-st.header('Sesgo')
+st.header('*Sesgo*')
 b = st.number_input('Valor de Bias')
-st.header('Función de activación')
+st.header('*Función de activación*')
 activation = st.selectbox(
 	'Elige una Función de activación',
 	('relu', 'sigmoid', 'tanh')
@@ -73,4 +73,4 @@ if st.button('Calcular salida', key='button1'):
   n1 = Neuron(weights=w_list, bias=b, func=activation)
   x = x_list
   output = n1.run(input_data=x)
-  st.write(f'La salida de la neurona es: {output}')
+  st.write(f'La salida de la neurona es: :blue[{output}]')
